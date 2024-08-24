@@ -1,2 +1,2 @@
-# Bondy
-Practical application for designing a complete website using Bootstrap.
+# Special Design
+Practical application for designing a complete website without using a framework.
