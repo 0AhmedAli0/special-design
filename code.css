@@ -1,0 +1,501 @@
+/*
+Inline - by using the style attribute inside HTML elements.
+Internal - by using a <style> element in the <head> section.
+External - by using a <link> element to link to an external CSS file 
+ */
+
+/*   
+    background-image: url("../imgs/learn-programming.png");
+    background-repeat: no-repeat;
+*/
+* {
+  box-sizing: border-box;
+}
+
+div {
+  background-attachment: fixed;
+  background-position: left top;
+  background-size: cover;
+  outline: 10px solid red;
+}
+
+/*
+  Block
+
+  - Take Full Width If No Width
+  - Add Line Break
+  - Respect Padding, Margin, Width, Height
+
+  Inline
+
+  - Do Not Repsepct Width, Height
+  - Respect Padding And Margin [ Just right + Left ]
+  - Do Not Add Line Break
+  - Allow Elements Before And After It in The Same Line
+
+  Inline-Block
+
+  - Allow Elements Before And After It in The Same Line
+  - Respect Padding, Margin, Width, Height
+
+*/
+
+/* 
+    visibility: hidden; العنصر بيختفي لكن مكانه في الصفحه محجوز
+    display: none; العنصر بيختفي والحاجات الي تحته بتطلع مكانه
+ */
+
+/* 
+ .one,
+.two,
+.three,
+.four,
+.my-p {grouping multiple selectors}
+  */
+
+div {
+  max-width: 400px;
+  min-height: fit-content;
+  width: fit-content;
+  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  overflow: visible;
+  /* القيمه الافتراضيه للخاصيه وبتخليك تشوف الحاجات الي برا المحتوي */
+}
+
+div {
+  text-shadow: 1 1 0.5 blue;
+  /* text-shadow => horizonta-shadow  vertical-shadow blur color  */
+  text-align: center;
+  direction: ltr;
+  /* left to right  */
+  direction: rtl;
+  /* يعني اتجاه الكلام دا العنصر من اليمين الي الشمال*/
+  vertical-align: middle;
+  text-decoration: none;
+  text-transform: capitalize;
+  /*اول حرف كابيتال*/
+  letter-spacing: -2px;
+  /* التباعد ما بين الحروف بالموجب والسالب */
+  text-indent: 100px;
+  /* بيحط مساحه فاضيه قبل الكلام وممكن تبقي قيمتها بالسالب*/
+  line-height: 1.6;
+  /* التباعد ما بين الخطوط */
+  word-spacing: 5px;
+  white-space: nowrap;
+  /* متخليش العنصر لو فيه كلام كتير بيقه الكلام ينزل تحت */
+  word-break: break-word او break-all الاختلاف ما بين الاتنين ف المكان الي هيكسر
+    اللينك منه;
+  /* لو عندك لينك مثلا وعايز بقيته ينزل لتحت*/
+  text-overflow: ellipsis;
+  /* بتخفي الكلام الي طالع برا المحتوي وبتحط تلات نقط عشان تعرفك ان فيه كلام مقطوع */
+}
+
+/* css units
+    em => 1time from front size to parent if parent dont have font then from big parent وهكذا
+    rem=> root time => html font size (defult = 16px)
+    percentage => percent from front size to parent if parent dont have font then from big parent
+    vw => 1%view port width = 1vw
+    vh => view port height 
+    font-stile: italic;*/
+
+/* 
+.parent div {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  background-color: #eee;
+  width: 25%;
+  float: left;
+}
+.clear {
+  clear: both;float بتحل مشكله (بتتحط بعد العنصر الي معموله طوفان وبيكون عنصر فاضي)
+} */
+
+.position {
+  opacity: 0.5;
+  /* للتحكم في الشفافيه الخاصه بالعنصر */
+  position: relative;
+  /* بتخلي العنصر يتحرك بناء علي نفسه 
+    مكانه بيفضل محجوز*/
+  position: absolute;
+  /* العنصر بيتحرك بناء علي الاب الي هو فيه 
+     position: relative; الب الي هو فيه لازم يكون واخد */
+  position: fixed;
+  /* بيخلي العنصر ثابت في الصفحه 
+    position: relative; الب الي هو فيه لازم يكون واخد */
+  position: static;
+  /* بيستخدم لو فيه لينكات ف الصفحه وعايزهم يبقوا ف مكانهم عادي 
+    بس اول ما الشخص يعديهم يثبتوا ف اول الصفحه */
+
+  z-index: 3;
+  /*position مش بتشتغل من غير 
+    وبياخد قيم سالبه */
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+table {
+  width: 100%;
+  border-spacing: 0;
+}
+
+table td {
+  padding: 15px;
+  background-color: #eee;
+  border: 1px solid #e2e2e2;
+}
+
+table thead td {
+  background-color: #f44336;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  border-color: #f35246;
+}
+
+/* Pseudo Classes بقدر احدد شويه حالات للعنصر  وانسقها 
+
+.ch:checked + label{}
+div:empty{}
+.in:focus{}
+*/
+
+/* Pseudo Elements
+.two::first-letter{}
+.three::first-line{}
+::selection{}بيخليك تقدر تتحكم ف اي حاجه بيتعملها تحديد
+.one::after{
+  content: counter(members-counter);
+  content: attr(data-text);
+}
+*/
+
+/* Box Shadow => h-shadow v-shadow blur spread(الانتشار) color inset(داخلي) */
+/* box-sizing: border-box; padding & border بيبقوا من ضمن المساحه مش بيزود مساحه علي العنصر */
+
+/* 
+transition-property: width; الخاصيه الي انت عايز تطبق عليه الكلام ده
+ transition-duration: 1s; العنصر هينتقل من الحاله الاولي للثانيه في ثانيه
+ transition-timing-function: ease-in-out; الطريقه الي العنصر هيتحرك بيها 
+ transition-delay: 0.2s; العنصر هيستني ثانيتينقبل ما يعمل اي حاجه
+  transition: width 2s 0.5s linear , height 1s;
+   */
+
+/*
+  The Margin Collapse
+  [1] Only Vertical Margin Collapse
+  [2] Bigger Margin Wins
+  [3] Margin Collapsing With Elements Without Anything Between
+  [4] Nesting Does Not Prevent Collapse
+*/
+
+/*
+  CSS Variables
+  - Global Variable
+  - Local Variable
+  var(Variable Name, Fall Back Value)
+*/
+
+:root {
+  --mainColor: blue;
+  --mainPadding: 10px;
+  align-content: space-between;
+}
+
+.main {
+  background-color: var(--mainColor, black);
+  color: white;
+  padding: calc(20px + var(--mainPadding));
+}
+
+/*
+  Flexible Box
+  For Parent
+  - display: flex => To Start Flexible Box
+  - flex-direction: column-reverse & row => Default Value
+  - flex-wrap: wrap-reverse & nowrap => Default Value
+  - flex-flow: [Flex-Direction] + [Flex-Wrap]
+    ---
+  - justify-content: center & flex-start => Default Value
+      justify-content: flex-end;المحتوي نفسه هيروح نايه اليمين لو فيه مساحه فاضيه 
+        justify-content: space-between;
+            justify-content: space-evenly;
+   ----
+    - align-items: stretch => Default Value بيخلي العنصر بيتعمله تمديد عشان يناسب طول لاب
+        align-items: flex-end;بتاخد المحتوي وتتحرك بيه طوليا لتحت لو فيه مساحه
+            align-items: center;
+    
+    ----
+    - align-content: stretch => Default Value 
+        align-content: flex-start; بيحرك المحتوي كله مع بعضه مش بيخلي مسافه بينهم 
+            align-items مش بيسيب مسافه بين المحتوي زي 
+                align-content: space-between; المسافه بينهم طوليه
+
+  For Child
+  - flex-grow: 0 => Default Value
+  - flex-shrink: 1 => Default Value انكماش
+  - order: 0 => Default Value
+  - flex-basis: 200px & auto => Default Value
+  - flex: [Flex Grow] [Flex Shrink] [Flex Basis] 0 1 Auto
+  - align-self: auto => Default Value
+
+*/
+/* filter: grayscale(100%); */
+/*
+  Gradients
+  linear-gradient(Direction || Angle, Color Stop 1, Color Stop 2, ....)
+  to top== 0 degree
+
+    background-image: linear-gradient(
+    to right,
+    #2980b9 20%,
+    #27ae60 20%,
+    #27ae60 40%,
+    #d35400 40%,
+    #d35400 60%,
+    #8e44ad 60%,
+    #8e44ad 80%,
+    #c0392b 80%
+  );
+*/
+
+/* 
+  pointer-events: none; بتلغي اي حدث علي العنصر
+    caret-color: red; لون العلامه الي بتستخدمها للكتابه
+*/
+
+/*
+  Grid
+  Parent
+  - display: grid | inline-grid
+  - grid-template-columns: [Number Of Columns In] => [Px, %, Auto, Fraction, Repeat, Mix]
+    - grid-template-rows: [Number Of Rows In] => [Px, %, Auto, Fraction, Repeat, Mix]
+  - gap: [Row Gap] [Column Gap]المسافات ما بين الصفوف والاعمده
+-----------repeat(5 , 300px)
+  - justify-content
+  - align-content (space-between & space-around & space-evenly) علي خلاف الفلكس ممكن تديلها
+
+  grid-template-areas:
+  "logo logo nav nav nav nav nav nav nav nav"
+  "cont cont cont cont cont cont cont . side side"
+  "foot foot foot foot foot foot foot foot foot foot";
+
+  child
+  grid-area: logo;
+  - grid-area: [Grid-Row-Start] /[Grid-Column-Start]/ [Grid-Row-End] /[Grid-Column-End]
+  - grid-column: [Grid-Column-Start] [Grid-Column-End] العنصر هياخد كام عمود
+  - grid-row: [Grid-Row-Start]/[Grid-Row-End] or span 3 or [Grid-Row-Start]/span 4
+  - grid-row-start: بتحدد الصف الي انت هتبدا منه
+  - grid-column-start: بتحدد العمود الي انت هتبدا منه
+   Min, Max And Autofill & autofit ===> example
+
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  - order: 0 => Default Value
+
+*/
+
+/* 
+transform: scaleX(2) or scaleY(2) or scale(2 , 2) بيشد العنصر
+transform: rotate(45deg) or rotate(1turn);
+    transform: scale(1.3 , 1.3) rotate(5deg);
+transform: translate(-100px, -100px); بتخلي العنصر يتحرك ناحيه محور اكس كام وناحيه محور واي كام
+transform: skewX(10deg); العنصر هيحصله انحراف ناحيه محور اكس
+
+ matrix(scaleX(), skewY(), skewX(), scaleY(), translateX(), translateY())
+
+ -----  transform-origin
+  Syntax
+  Default Values => 50% 50% 0
+  2D Transform => transform-origin(X, Y)
+  3D Transform => transform-origin(X, Y, Z)
+  X-Axis
+  - CSS Unit [px, em, rem]
+  - %
+  - Keyword
+  -- Left = 0%
+  -- Center = 50%
+  -- Right = 100%
+  Y-Axis
+  - CSS Unit [px, em, rem]
+  - %
+  - Keyword
+  -- Top = 0%
+  -- Center = 50%
+  -- Bottom = 100%
+
+  -------- transform 3d
+  transform: rotateX(50deg);
+  transform: rotateY(50deg);
+  transform: rotateZ(50deg);
+  transform: rotate3d(0, 1, 1, 65deg);
+
+    transform: translate(100px, -100px);
+  transform: translateX(100px);
+  transform: translateZ(100px);
+  transform: translate3d(0, 0, 100px);
+
+for parent 
+  perspective: 300px;z بعد العنصر عني في محور 
+  perspective-origin: center center;
+
+------- backface-visibility: hidden; اي عنصر بيتقلب بتحكم هل المستخدم يشوف العنصر ولا لا
+for parent   transform-style: preserve-3d; بتحفظ حاله العنصر في الوضع الثلاثي الابعاد
+
+
+
+ */
+div {
+  animation-name: change-color;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: alternate (بيروح ويرجع) or reverse or normal or
+    alternate-reverse;
+  animation-delay: -2s;
+
+  animation-fill-mode: both or
+    forwards(بياخد اخر قيمه في الانيميشن مش بيرجع للقيمه الاساسيه) or backwards
+    (بياخد اول قيه);
+  animation-play-state: running;
+
+  animation: coloring 3s linear 2s infinite reverse;
+}
+
+@keyframes change-color {
+  from {
+    background-color: red;
+  }
+
+  to {
+    background-color: blue;
+  }
+}
+
+@keyframes change-color {
+  0% {
+    background-color: red;
+  }
+
+  5% {
+    background-color: blue;
+  }
+
+  80% {
+    background-color: black;
+  }
+
+  100% {
+    background-color: red;
+  }
+}
+
+/*
+  CSS Selectors
+  - Element.class-name => p.class-name
+  - .parent > .child => Direct Child
+
+  - Element + Other Element => [div + p] البرجراف الي قبله ديف
+  - Element ~ Other Elements => [p ~ div] كل العناصر الي نوعها ديف بعد البرجراف
+  - [Attribute]
+  - Element[Attribute] => div[title]
+  - [Attribute=Value]
+  - Element[Attribute=Value] => input[type="submit"]
+  - [Attribute~=Value] => Contains A Word 
+  - [Attribute*=Value] => Contains A Atring جزء من كلمه او كلمه منفصله من قيمه المتغير
+  - [Attribute^=Value] => Start With A String
+
+    - :first-child الابن الاول في الاب بتاعه
+  - :last-child
+  - :first-of-type
+  - :last-of-type
+  - :only-child
+  - :only-of-type
+
+    - :not(Selectors) => :not(:first-child) or :not(.day)
+  - :nth-child(n)
+  - :nth-last-child(n)
+  - :nth-of-type(n)
+  - :nth-last-of-type(n)
+
+    - :root
+  - :checked
+  - :empty
+  - :disabled
+  - :required
+  - :focus
+  - ::selection
+  - ::placeholder
+*/
+
+/* <link rel="stylesheet" href="css/print.css" media="print" />
+or
+@media print {
+  .parent > div:first-child {
+    display: none;
+  }
+*/
+/* Small Screens */
+
+@media (min-width: 768px) and (max-width: 991px) {
+}
+
+/* Medium Screens */
+
+@media (min-width: 992px) {
+}
+
+/* Large Screens */
+
+@media (min-width: 1200px) {
+}
+
+/*
+  CSS Global Values
+  - inherit
+  - initial التنسيقات الخاصه لكل عنصر من اول ما يتولد
+  - unset
+  --- If Inherit => inherit
+  --- If Not => initial
+  - revert CSS Level [4] بترجعه للوضع بتاع اليوزر ايجنت
+  - all
+*/
+/* start grid system breakpoints */
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+/* // X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140;
+  }
+}
+
+/* // XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+/* end grid system */
