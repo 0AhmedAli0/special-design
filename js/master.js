@@ -77,11 +77,11 @@ wantRandom.forEach((ele) => {
 //////////////////////////   landing Bage   /////////////////////////
 let landing_img = document.querySelector(".landing-page");
 let backgroundImg = [
-  "url(../Imags/02.jpg)",
-  "url(../Imags/01.jpg)",
-  "url(../Imags/03.jpg)",
-  "url(../Imags/04.jpg)",
-  "url(../Imags/05.jpg)",
+  "url(./Imags/02.jpg)",
+  "url(./Imags/01.jpg)",
+  "url(./Imags/03.jpg)",
+  "url(./Imags/04.jpg)",
+  "url(./Imags/05.jpg)",
 ];
 
 let backgroundInterval;
